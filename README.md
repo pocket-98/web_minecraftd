@@ -2,6 +2,7 @@
 Web interface for minecraftd script
 
 ### Install minecraftd
+ * link: https://aur.archlinux.org/packages/minecraft-server/
  * move minecraftd.sh script to `/usr/local/bin/minecraftd`
  * move minecraftd.conf file to `/etc/conf.d/minecraft`
  * create system group minecraft (`groupadd -r minecraft`)
