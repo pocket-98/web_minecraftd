@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title>Minecraft Server</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-sm-1 col-md-2"></div>
+      <div id="page" class="col-xs-12 col-sm-10 col-md-8">
+
+        <h1>Minecraft Server</h1>
+        <hr/>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="response" id="status-response">status</div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-xs-6 col-sm-5">
+            <div class="button" onclick="start()">
+              <div>Start Minecraft Server</div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-5">
+            <div class="button" onclick="stop()">
+              <div>Stop Minecraft Server</div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+        <hr/>
+        <div class="log">
+          <h3>Log</h3>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-xs-12 col-sm-10">
+              <div id="log-response"></div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+        <hr/>
+      <div class="col-sm-1 col-md-2"></div>
+
+    </div>
+  </body>
+</html>
