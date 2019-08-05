@@ -12,5 +12,4 @@ Web interface for minecraftd script
 
 ### Install Web Interface
  * move `minecraftd` folder to webroot
- * add line to sudoers file (`sudo visudo`) : `www-data ALL=(minecraft) ALL` (some systems use different user for apache ex. 'http')
- * remove user password for apache user (`sudo passwd -d www-data`)
+ * add line to sudoers file (`sudo visudo`) : `www-data ALL=(minecraft) NOPASSWD: ALL` (some systems use different user for apache ex. 'http')
