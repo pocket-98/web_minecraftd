@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <title>Minecraft Server</title>
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -15,6 +16,18 @@
 
         <h1>Minecraft Server</h1>
         <hr/>
+        <div class="row" style="text-align: center">
+          <div class="col-xs-1 col-sm-2 colcenter"></div>
+          <div class="col-xs-7 col-sm-6 colcenter">
+            <input type="password" id="passwd" placeholder="passwd"></input>
+          </div>
+          <div class="col-xs-3 col-sm-2 colcenter">
+            <div class="button" onclick="auth()">
+              <div style="padding: 10px">auth</div>
+            </div>
+          </div>
+          <div class="col-xs-1 col-sm-2 colcenter"></div>
+        </div>
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-xs-12 col-sm-10">
@@ -48,7 +61,8 @@
           </div>
         </div>
         <hr/>
-      <div class="col-sm-1 col-md-2"></div>
+        <div class="col-sm-1 col-md-2"></div>
+      </div>
 
     </div>
   </body>

@@ -1,26 +1,27 @@
 var delay = 5000;
 var numLines = 15;
-
 var updateThread;
 
 $(document).ready(function() {
-	loading();
+	$("#status-response").html("<div class='loader'></div>");
 	statusAndLog(numLines);
 
 	updateThread = setInterval(function() {
 		statusAndLog(numLines);
 	}, delay);
 	console.log("started update thread");
+
+    $("#passwd").keyup(function(event) {
+        if (event.keyCode == 13) { // enter key pressed
+            auth();
+        }
+    });
 });
 
 $(window).on("unload", function() {
 	clearInterval(updateThread);
 	console.log("stopped update thread");
 });
-
-function loading() {
-	$("#status-response").html("<div class='loader'></div>");
-}
 
 function status() {
 	$.get("status.php", function(response) {
@@ -36,13 +37,31 @@ function log(numLines) {
 	});
 }
 
+function passwd() {
+    return $("#passwd").val();
+}
+
+function auth() {
+	$.get("auth.php", {"pass":passwd()}, function(response) {
+		$("#status-response").html(response);
+        if (response.indexOf("invalid") < 0) {
+            console.log("checked password: authenticated");
+        } else {
+            console.log("checked password: not authenticated");
+        }
+    });
+}
+
 function start() {
-	loading();
+	$("#status-response").html("<div class='loader'></div>");
 	$("#log-response").html("");
-	$.get("start.php", function(response) {
-		$("#log-response").html("");
+	$.get("start.php", {"pass":passwd()}, function(response) {
+		$("#log-response").html(response);
 		status(numLines);
 		console.log("started server");
+		setTimeout(function() {
+			statusAndLog(numLines);
+		}, 1000);
 
 		clearInterval(updateThread);
 		updateThread = setInterval(function() {
@@ -53,9 +72,12 @@ function start() {
 }
 
 function stop() {
-	loading();
-	$.get("stop.php", function(response) {
-		statusAndLog(numLines);
+	$("#status-response").html("<div class='loader'></div>");
+	$.get("stop.php", {"pass":passwd()}, function(response) {
+		$("#log-response").html(response);
+		setTimeout(function() {
+			statusAndLog(numLines);
+		}, 1000);
 		console.log("stopped server");
 		clearInterval(updateThread);
 		console.log("stopped update thread");
