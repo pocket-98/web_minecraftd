@@ -12,37 +12,37 @@
   <body>
     <div class="container-fluid">
       <div class="col-sm-1 col-md-2"></div>
-      <div id="page" class="col-xs-12 col-sm-10 col-md-8">
+      <div id="page" class="col-12 col-sm-10 col-md-8">
 
         <h1>Minecraft Server</h1>
         <hr/>
-        <div class="row" style="text-align: center">
-          <div class="col-xs-1 col-sm-2 colcenter"></div>
-          <div class="col-xs-7 col-sm-6 colcenter">
+        <div class="row align-items-center" style="text-align: center">
+          <div class="col-1 col-sm-2"></div>
+          <div class="col-7 col-sm-6">
             <input type="password" id="passwd" placeholder="passwd"></input>
           </div>
-          <div class="col-xs-3 col-sm-2 colcenter">
+          <div class="col-3 col-sm-2">
             <div class="button" onclick="auth()">
               <div style="padding: 10px">auth</div>
             </div>
           </div>
-          <div class="col-xs-1 col-sm-2 colcenter"></div>
+          <div class="col-1 col-sm-2"></div>
         </div>
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-sm-1"></div>
-          <div class="col-xs-12 col-sm-10">
+          <div class="col-12 col-sm-10">
             <div class="response" id="status-response">status</div>
           </div>
           <div class="col-sm-1"></div>
         </div>
         <div class="row">
           <div class="col-sm-1"></div>
-          <div class="col-xs-6 col-sm-5">
+          <div class="col-6 col-sm-5">
             <div class="button" onclick="start()">
               <div>Start Minecraft Server</div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-5">
+          <div class="col-6 col-sm-5">
             <div class="button" onclick="stop()">
               <div>Stop Minecraft Server</div>
             </div>
@@ -54,7 +54,7 @@
           <h3>Log</h3>
           <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-xs-12 col-sm-10">
+            <div class="col-12 col-sm-10">
               <div id="log-response"></div>
             </div>
             <div class="col-sm-1"></div>

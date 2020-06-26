@@ -12,11 +12,17 @@ function post_get($var) {
 
 // get message to show for given password
 function auth($pass) {
-    // table of md5(passwords) and message if authenticated
-    $auth_table = array(
-        "29000b redacted_for_privacy cea3" => "Hello, Sahil",
-        "2632a9 redacted_for_privacy 4446" => "Hello, Pavan",
-    );
+    // table of passwords and message if authenticated
+    $auth_table = array();
+    $auth_file = fopen("passwd", "r");
+    while (! feof($auth_file)) {
+        $line = fgets($auth_file);
+        $line_parts = explode("::", $line);
+        if (count($line_parts) == 2) {
+            $auth_table += array(trim($line_parts[0]) => trim($line_parts[1]));
+        }
+    }
+    fclose($auth_file);
 
     // check if authenticated
     $append_log = date("Y/m/d-H:i:s");
@@ -93,4 +99,5 @@ function get_log_lines() {
     }
 	return $lines;
 }
+auth("9319");
 ?>

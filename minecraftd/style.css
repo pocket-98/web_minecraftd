@@ -29,12 +29,6 @@ h1 {
     width: 100%;
 }
 
-.colcenter {
-    display: inline-block;
-    float: none;
-    margin-right: -4px;
-}
-
 .button {
 	width: auto;
 	margin: 15px auto 10px auto;

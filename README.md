@@ -13,3 +13,8 @@ Web interface for minecraftd script
 ### Install Web Interface
  * move `minecraftd` folder to webroot
  * add line to sudoers file (`sudo visudo`) : `www-data ALL=(minecraft) NOPASSWD: ALL` (some systems use different user for apache ex. 'http')
+ * create password file `passwd` with lines formatted as `<md5sum>::<message>`
+ * example for the password `123` and message `hello`:
+```
+202cb962ac59075b964b07152d234b70::hello
+```
